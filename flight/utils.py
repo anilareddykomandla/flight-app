@@ -18,6 +18,7 @@ def addPlaces():
     file = open("./Data/airports.csv", "r")
     print("Adding Airports...")
     total = get_number_of_lines("./Data/airports.csv")
+    print(total)
     for i, line in tqdm(enumerate(file), total=total):
         if i == 0:
             continue
@@ -36,6 +37,7 @@ def addDomesticFlights():
     file = open("./Data/domestic_flights.csv", "r")
     print("Adding Domestic Flights...")
     total = get_number_of_lines("./Data/domestic_flights.csv")
+    print(total)
     for i, line in tqdm(enumerate(file), total=total):
         if i == 0:
             continue
@@ -66,6 +68,7 @@ def addInternationalFlights():
     file = open("./Data/international_flights.csv", "r")
     print("Adding International Flights...")
     total = get_number_of_lines("./Data/international_flights.csv")
+    print(total)
     for i, line in tqdm(enumerate(file), total=total):
         if i == 0:
             continue
@@ -82,6 +85,9 @@ def addInternationalFlights():
         economy_fare = float(data[11].strip()) if data[11].strip() else 0.0
         business_fare = float(data[12].strip()) if data[12].strip() else 0.0
         first_fare = float(data[13].strip()) if data[13].strip() else 0.0
+        economy_fare = round(economy_fare / 82, 2)
+        business_fare = round(business_fare / 82, 2)
+        first_fare = round(first_fare / 82, 2)
 
         try:
             a1 = Flight.objects.create(origin=Place.objects.get(code=origin), destination=Place.objects.get(code=destination), depart_time=depart_time , duration=duration, arrival_time=arrive_time, plane=flight_no, airline=airline, economy_fare=economy_fare, business_fare=business_fare, first_fare=first_fare)

@@ -20,7 +20,7 @@ for r in tr:
     code = d[2].text.strip().upper()
     city = d[3].text.strip()
     country = d[4].text.strip()
-    
+
     row = {
         'city': city,
         'airport': airport,
@@ -42,7 +42,7 @@ for r in tr[1:]:
     code = d[0].text.strip().upper()
     city = d[2].text.strip()
     country = 'USA'
-    
+
     row = {
         'city': city,
         'airport': airport,

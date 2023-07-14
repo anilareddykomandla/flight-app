@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
 import math
 from .models import *
-from capstone.utils import render_to_pdf, createticket
+from app.utils import render_to_pdf, createticket
 
 
 #Fee and Surcharge variable
@@ -74,7 +74,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
-            
+
         else:
             return render(request, "flight/login.html", {
                 "message": "Invalid username and/or password."
@@ -164,7 +164,7 @@ def flight(request):
             except:
                 max_price2 = 0  ##
                 min_price2 = 0  ##
-                
+
     elif seat == 'business':
         flights = Flight.objects.filter(depart_day=flightday,origin=origin,destination=destination).exclude(business_fare=0).order_by('business_fare')
         try:
@@ -191,7 +191,7 @@ def flight(request):
         except:
             max_price = 0
             min_price = 0
-            
+
         if trip_type == '2':    ##
             flights2 = Flight.objects.filter(depart_day=flightday2,origin=origin2,destination=destination2).exclude(first_fare=0).order_by('first_fare')
             try:
@@ -305,7 +305,7 @@ def book(request):
                 gender = request.POST[f'passenger{i}Gender']
                 passengers.append(Passenger.objects.create(first_name=fname,last_name=lname,gender=gender.lower()))
             coupon = request.POST.get('coupon')
-            
+
             try:
                 ticket1 = createticket(request.user,passengers,passengerscount,flight1,flight_1date,flight_1class,coupon,countrycode,email,mobile)
                 if f2:
@@ -328,7 +328,7 @@ def book(request):
                         fare = flight1.first_fare*int(passengerscount)
             except Exception as e:
                 return HttpResponse(e)
-            
+
 
             if f2:    ##
                 return render(request, "flight/payment.html", { ##

@@ -1,5 +1,5 @@
 """
-WSGI config for capstone project.
+WSGI config for flight-app project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

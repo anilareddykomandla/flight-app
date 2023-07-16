@@ -246,14 +246,14 @@ def review(request):
 
     if request.user.is_authenticated:
         flight1 = Flight.objects.get(id=flight_1)
-        flight1ddate = datetime(int(date1.split('-')[2]),int(date1.split('-')[0]),int(date1.split('-')[1]),flight1.depart_time.hour,flight1.depart_time.minute)
+        flight1ddate = datetime(int(date1.split('-')[2]),int(date1.split('-')[1]),int(date1.split('-')[0]),flight1.depart_time.hour,flight1.depart_time.minute)
         flight1adate = (flight1ddate + flight1.duration)
         flight2 = None
         flight2ddate = None
         flight2adate = None
         if round_trip:
             flight2 = Flight.objects.get(id=flight_2)
-            flight2ddate = datetime(int(date2.split('-')[2]),int(date2.split('-')[0]),int(date2.split('-')[1]),flight2.depart_time.hour,flight2.depart_time.minute)
+            flight2ddate = datetime(int(date2.split('-')[2]),int(date2.split('-')[1]),int(date2.split('-')[0]),flight2.depart_time.hour,flight2.depart_time.minute)
             flight2adate = (flight2ddate + flight2.duration)
         #print("//////////////////////////////////")
         #print(f"flight1ddate: {flight1adate-flight1ddate}")

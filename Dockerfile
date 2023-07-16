@@ -4,6 +4,10 @@ COPY ./requirements.txt /requirements.txt
 COPY . /flight
 WORKDIR /flight
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+mysql \
+libmysqlclient-dev
+
 RUN python3 -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /requirements.txt && \

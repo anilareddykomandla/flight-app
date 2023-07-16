@@ -24,7 +24,7 @@ try:
     if len(Flight.objects.all()) == 0:
         print("Do you want to add flights in the Database? (y/n)")
         if input().lower() in ['y', 'yes']:
-            addDomesticFlights()
+            #addDomesticFlights()
             addInternationalFlights()
 except:
     pass

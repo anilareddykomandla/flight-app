@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-3 depart-time">
                             <div class="time">{{flight1.depart_time | time:'H:i'}}</div>
-                            <div class="date ddate" data-value='{{flight1ddate | date:"m-d-Y"}}'>{{flight1ddate | date:"D, d M y"}}</div>
+                            <div class="date ddate" data-value='{{flight1ddate | date:"m-d-Y"}}'>{{flight1ddate | date:"D, M d y"}}</div>
                             <div class="place">{{flight1.origin.city}}</div>
                             <div class="airport">{{flight1.origin.airport}}</div>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-3 arrival-time">
                             <div class="time">{{flight1.arrival_time | time:'H:i'}}</div>
-                            <div class="date adate" data-value='{{flight1adate | date:"m-d-Y"}}'>{{flight1adate | date:"D, d M y"}}</div>
+                            <div class="date adate" data-value='{{flight1adate | date:"m-d-Y"}}'>{{flight1adate | date:"D, M d y"}}</div>
                             <div class="place">{{flight1.destination.city}}</div>
                             <div class="airport">{{flight1.destination.airport}}</div>
                         </div>

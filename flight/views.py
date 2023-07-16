@@ -246,7 +246,7 @@ def review(request):
 
     if request.user.is_authenticated:
         flight1 = Flight.objects.get(id=flight_1)
-        flight1ddate = datetime(int(date1.split('-')[2]),int(date1.split('-')[1]),int(date1.split('-')[0]),flight1.depart_time.hour,flight1.depart_time.minute)
+        flight1ddate = datetime(int(date1.split('-')[1]),int(date1.split('-')[2]),int(date1.split('-')[0]),flight1.depart_time.hour,flight1.depart_time.minute)
         flight1adate = (flight1ddate + flight1.duration)
         flight2 = None
         flight2ddate = None

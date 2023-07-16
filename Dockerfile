@@ -5,8 +5,11 @@ COPY . /flight
 WORKDIR /flight
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-mysql \
-libmysqlclient-dev
+build-essential \
+python3-dev \
+python-dev \
+libmariadb-dev-compat \
+libmariadb-dev
 
 RUN python3 -m venv /py && \
     /py/bin/pip install --upgrade pip && \

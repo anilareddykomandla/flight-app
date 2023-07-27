@@ -15,15 +15,15 @@ Developed by Anila Reddy Komandla
     - `urls.py` - This file handles all the URLs of the project.
   - `flight` - main application directory.
     - `static` - contains all static content.
-        - `css` - Contains all css files for styling the webpages.
-        - `js` - Contains all JS files used in the application.
+        - `css` - Contains all css files for styling the website pages.
+        - `js` - Contains all javascript files used in the application.
         - `img` - Contains all static image files used in the application.
     - `templates/flight` Contains all application templates.
-        - `book.html` - Template for showing selected flight and reading passenger data.
+        - `book.html` - Template for booking flights and capturing passenger data.
         - `bookings.html` - Template for showing bookings made by a user.
-        - `index.html` - Home page template.
+        - `index.html` - Home page template for searching flights.
         - `layout.html` - Base template for all pages except login & register page.
-        - `layout2.html` - Base template for login & register page.
+        - `layout2.html` - Base template for login & user registration page.
         - `login.html` - User login page.
         - `payment_process.html` - Payment confirmation page.
         - `payment.html` - Credit Card payment page.
@@ -32,7 +32,10 @@ Developed by Anila Reddy Komandla
         - `ticket.html` - Template for printing a pdf ticket.
     - `admin.py` - Contains some models for access to the django administrator.
     - `models.py` - All models used in the application are created here.
-    - `urls.py` - This file handles all the URLs of the web application.
+    - `Dockerfile` - Dockerfile for containerizing the web application.
+    - `app.yaml` - The app.yaml file required for deploying the application on Google Cloud Platform.
+    - `entry_point.sh` - Run the application from inside the docker container.
+    - `urls.py` - This file maps all the URLs of the web application to views.
     - `views.py` - This file contains all the application views.
     - `constant.py` - This file contains the booking fee amount which is charged to the user for booking flight tickets.
   - `requirements.txt` - This file contains all the python packages that needs to be installed to run this web application.

@@ -1,4 +1,4 @@
-Django==3.1.2
+Django==3.1.13
 reportlab==3.6.13
 xhtml2pdf==0.2.11
 tqdm==4.64.0
